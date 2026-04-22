@@ -1,0 +1,32 @@
+# Copyright AGNTCY Contributors (https://github.com/agntcy)
+# SPDX-License-Identifier: Apache-2.0
+
+version: "3"
+
+includes:
+  vars:
+    taskfile: Taskfile.vars.yml
+    flatten: true
+    excludes: [default]
+
+  deps:
+    taskfile: Taskfile.deps.yml
+    dir: "{{.BIN_DIR}}"
+    flatten: true
+    excludes: [default]
+
+tasks:
+  default:
+    cmd: echo "Run the main Taskfile instead of this one."
+
+  gui:build:macos:
+    desc: Build the GUI for macOS
+    deps:
+      - deps:dirctl
+    cmds:
+      - flutter config --enable-macos-desktop
+      - flutter create . --platforms=macos
+      - flutter build macos
+      - cp {{.DIRCTL_BIN}} build/macos/Build/Products/Release/gui.app/Contents/Resources/dirctl
+    preconditions:
+      - which flutter

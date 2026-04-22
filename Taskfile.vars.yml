@@ -1,0 +1,9 @@
+# Copyright AGNTCY Contributors (https://github.com/agntcy)
+# SPDX-License-Identifier: Apache-2.0
+
+version: "3"
+
+vars:
+  BIN_DIR: "{{ .ROOT_DIR }}/.bin"
+  DIRCTL_VERSION: '{{ .DIRCTL_VERSION | default "1.2.0" }}'
+  DIRCTL_BIN: "{{ .BIN_DIR }}/dirctl"

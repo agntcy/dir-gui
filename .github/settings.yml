@@ -5,10 +5,10 @@ repository:
   # See https://developer.github.com/v3/repos/#edit for all available settings.
 
   # The name of the repository. Changing this will rename the repository
-  name: repo-template
+  name: dir-gui
 
   # A short description of the repository that will show up on GitHub
-  description: Agntcy Project Repo Template
+  description: Directory GUI
 
   # A URL with more information about the repository
   homepage: https://www.example.com
@@ -69,12 +69,8 @@ repository:
 #   #   repository without access to sensitive or destructive actions.
 #   # * `triage` - Recommended for contributors who need to proactively manage
 #   #   issues and pull requests without write access.
-#   - name: <project-name-admins>
+#   - name: dir-maintainers
 #     permission: admin
-#   - name: <project-name-maintainers>
-#     permission: maintain
-#   - name: <project-name>
-#     permission: triage
 
 # TODO: Enable this section once repository has been created & no further modifications are needed
 # branches:
