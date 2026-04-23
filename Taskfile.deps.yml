@@ -1,0 +1,25 @@
+# Copyright AGNTCY Contributors (https://github.com/agntcy)
+# SPDX-License-Identifier: Apache-2.0
+
+version: "3"
+
+tasks:
+  default:
+    cmd: echo "Run the main Taskfile instead of this one."
+
+  deps:bin-dir:
+    desc: Create bin directory
+    run: once
+    cmd: mkdir -p {{ .BIN_DIR }}
+    status:
+      - test -d {{ .BIN_DIR }}
+
+  deps:dirctl:
+    desc: Install dirctl
+    deps:
+      - deps:bin-dir
+    cmds:
+      - curl -sfL https://github.com/agntcy/dir/releases/download/v{{ .DIRCTL_VERSION }}/dirctl-{{OS}}-{{ARCH}} -o {{ .DIRCTL_BIN }}
+      - chmod +x {{ .DIRCTL_BIN }}
+    status:
+      - test -x {{ .DIRCTL_BIN }}
