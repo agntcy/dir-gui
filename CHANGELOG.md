@@ -3,7 +3,7 @@
 [agntcy/dir]: https://github.com/agntcy/dir
 [agntcy/dir-gui]: https://github.com/agntcy/dir-gui
 
-## 1.0.0 (2026-04-22)
+## 1.0.1 (2026-04-23)
 
 ### Added
 
